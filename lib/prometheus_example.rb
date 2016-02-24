@@ -21,9 +21,9 @@ class PrometheusExample < Sinatra::Application
     "hey there"
   end
   
-  get '/b' do
-    "hey there b"
-   
+  get '/rand/*' do
+    sleep rand(0.0..3.5)
+    "simulation of random latency"
   end
   
   
