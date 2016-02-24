@@ -1,4 +1,4 @@
-require File.expand_path '../lib/prometheus_example', __FILE__
+require File.expand_path '../prometheus_example', __FILE__
 require 'rack'
 require 'prometheus/client/rack/collector'
 require 'prometheus/client/rack/exporter'

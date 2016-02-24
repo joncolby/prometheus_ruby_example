@@ -37,23 +37,23 @@ class PrometheusExample < Sinatra::Application
   #http_requests.increment
   
   get '/' do
-    "hey there"
+    "Hello World"
   end
   
   get '/latency/*' do
     sleep rand(0.0..3.5)
-    "simulation of random latency"
+    "Simulate random latency"
   end
 
    
   get '/jackpot/*' do
     status random_status 
-    "weighted-random status"
+    "Weighted-random status: #{random_status}"
   end
 
   post '/echo/*' do
     params_str = params.delete_if { |key, value| key.to_s.match(/splat|captures/) }
-    "you said: #{JSON.pretty_generate(params_str)}"
+    JSON.pretty_generate(params_str)
   end
 
 end
