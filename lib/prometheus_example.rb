@@ -7,7 +7,7 @@ class PrometheusExample < Sinatra::Application
   helpers do
     def random_status
       status_list = [ 200, 404, 403, 401 ]
-      status_weight = [ 20, 7, 3, 4 ]
+      status_weight = [ 30, 7, 3, 4 ]
       weight_sum = status_weight.reduce :+
       rand_num = rand(weight_sum)
       weight_sum = 0
@@ -41,7 +41,7 @@ class PrometheusExample < Sinatra::Application
   end
   
   get '/latency/*' do
-    sleep rand(0.0..3.5)
+    sleep rand(0.0..1.5)
     "Simulate random latency"
   end
 
